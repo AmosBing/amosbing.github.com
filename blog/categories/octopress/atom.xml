@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Amos’s Blog]]></title>
-  <link href="http://AmosBing.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Octopress | Amos’s Blog]]></title>
+  <link href="http://AmosBing.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
   <updated>2013-04-11T14:57:55+08:00</updated>
   <id>http://AmosBing.github.io/</id>
@@ -28,15 +28,6 @@
     <updated>2014-04-10T16:00:10+08:00</updated>
     <id>http://AmosBing.github.io/blog/2014/04/10/huan-bu-zhi-dao-zen-yao-xie-,shi-shi</id>
     <content type="html"><![CDATA[<p>写在这里就可以了吗？</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Frist Blog]]></title>
-    <link href="http://AmosBing.github.io/blog/2014/04/10/frist-blog/"/>
-    <updated>2014-04-10T14:49:35+08:00</updated>
-    <id>http://AmosBing.github.io/blog/2014/04/10/frist-blog</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
