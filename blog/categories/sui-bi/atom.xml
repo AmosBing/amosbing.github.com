@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Amos’s Blog]]></title>
-  <link href="http://AmosBing.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 随笔 | Amos’s Blog]]></title>
+  <link href="http://AmosBing.github.io/blog/categories/sui-bi/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
   <updated>2013-04-11T17:47:56+08:00</updated>
   <id>http://AmosBing.github.io/</id>
@@ -12,24 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[An Other Test]]></title>
-    <link href="http://AmosBing.github.io/blog/2014/04/10/an-other-test/"/>
-    <updated>2014-04-10T16:12:46+08:00</updated>
-    <id>http://AmosBing.github.io/blog/2014/04/10/an-other-test</id>
-    <content type="html"><![CDATA[<p>This is an other blog.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[还不知道怎么写，试试]]></title>
-    <link href="http://AmosBing.github.io/blog/2014/04/10/huan-bu-zhi-dao-zen-yao-xie-%2Cshi-shi/"/>
-    <updated>2014-04-10T16:00:10+08:00</updated>
-    <id>http://AmosBing.github.io/blog/2014/04/10/huan-bu-zhi-dao-zen-yao-xie-,shi-shi</id>
-    <content type="html"><![CDATA[<p>写在这里就可以了吗？</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[自然，你是怎么启迪生命]]></title>
