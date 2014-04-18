@@ -4,7 +4,7 @@
   <title><![CDATA[Amos’s Blog]]></title>
   <link href="http://AmosBing.github.io/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
-  <updated>2014-04-18T16:38:00+08:00</updated>
+  <updated>2014-04-18T17:51:46+08:00</updated>
   <id>http://AmosBing.github.io/</id>
   <author>
     <name><![CDATA[AmosBing]]></name>
@@ -128,6 +128,64 @@ rake preview //启动本地预览
  <img src="https://github.com/AmosBing/blogImages/blob/master/Image%20of%20blog/High%20%E8%B5%B7%E6%9D%A5%EF%BC%81%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E6%8A%80%E6%9C%AFblog/BlogHome.png?raw=true" alt="icon" /></p>
 
 <blockquote><p>如果你不管顺利与不顺利，都做到这一步了。那么恭喜你，blog的基础环境已经搭建完毕。先享受一杯茶吧。</p></blockquote>
+
+<h2>创建一个没有内容的博客，并发布到GitHub上</h2>
+
+<h4>我们创建一个blog来试试</h4>
+
+<pre><code>rake new_post["Frist blog"]
+rake generate
+rake preview
+</code></pre>
+
+<p>打开浏览器，输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 就可以看到如下的界面
+<img src="https://github.com/AmosBing/blogImages/blob/master/Image%20of%20blog/High%20%E8%B5%B7%E6%9D%A5%EF%BC%81%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E6%8A%80%E6%9C%AFblog/BlogFirstPost.png?raw=true" alt="icon" />
+终于，我们配置完成了octopress部分。</p>
+
+<h4>发布blog</h4>
+
+<ul>
+<li>方案一</li>
+</ul>
+
+
+<p>直接rake</p>
+
+<pre><code>rake deploy
+</code></pre>
+
+<p>第一次运行时，会询问是否建立对github的授权，输入：yes。然后将站点更新的内容推送到github上。</p>
+
+<blockquote><p>注：使用该方案时，为了避免麻烦，
+如 To git@github.com:AmosBing/amosbing.github.com.git</p>
+
+<p>! [rejected]        master &ndash;> master (non-fast-forward)</p>
+
+<p>这样的报错，<strong>应该让你的github项目时崭新的</strong>，没有提交过其他数据。</p></blockquote>
+
+<ul>
+<li>方案二
+
+<blockquote><p>不建议使用，该方法其实是在手动做rake deploy命令的事情。只有rake deploy失败时再使用吧。</p></blockquote></li>
+</ul>
+
+
+<p>直接把octopress下的静态页面的原始文件全部拷贝到github的版本库的本地目录下。全部覆盖，然后使用 git push 命令提交到 master 分支下就ok了。</p>
+
+<p>如下截图供参考：
+需要拷贝的文件</p>
+
+<p><img src="https://github.com/AmosBing/blogImages/blob/master/Image%20of%20blog/High%20%E8%B5%B7%E6%9D%A5%EF%BC%81%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E6%8A%80%E6%9C%AFblog/quide001.png?raw=true" alt="icon" /></p>
+
+<p>需要被覆盖的文件</p>
+
+<p><img src="https://github.com/AmosBing/blogImages/blob/master/Image%20of%20blog/High%20%E8%B5%B7%E6%9D%A5%EF%BC%81%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E6%8A%80%E6%9C%AFblog/guide002.png?raw=true" alt="icon" /></p>
+
+<h2>最后最多等上十分钟，新鲜美味的blog就出炉了</h2>
+
+<p>自己到github上得到你的blog地址，然后开始分享吧。</p>
+
+<p><img src="https://github.com/AmosBing/blogImages/blob/master/Image%20of%20blog/High%20%E8%B5%B7%E6%9D%A5%EF%BC%81%E5%BC%80%E5%A7%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E6%8A%80%E6%9C%AFblog/guide003.png?raw=true" alt="icon" /></p>
 ]]></content>
   </entry>
   
