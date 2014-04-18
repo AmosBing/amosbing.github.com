@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Github使用 | Amos’s Blog]]></title>
   <link href="http://AmosBing.github.io/blog/categories/githubshi-yong/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
-  <updated>2014-04-18T13:33:55+08:00</updated>
+  <updated>2014-04-18T13:37:47+08:00</updated>
   <id>http://AmosBing.github.io/</id>
   <author>
     <name><![CDATA[AmosBing]]></name>
@@ -18,7 +18,7 @@
     <link href="http://AmosBing.github.io/blog/2014/04/18/begin-blog-on-github-with-octopress/"/>
     <updated>2014-04-18T09:12:28+08:00</updated>
     <id>http://AmosBing.github.io/blog/2014/04/18/begin-blog-on-github-with-octopress</id>
-    <content type="html"><![CDATA[<p>想了很久很久，终于决定开始自己的blog之旅。之前一直纠结在哪个网站（新浪？cococa China？CSND？）上开始自己的blog。<!-- more -->后来无意间看到唐巧的这篇博文<a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">象写程序一样写博客</a>，觉得之前的想法都弱爆了。</p>
+    <content type="html"><![CDATA[<p>想了很久很久，终于决定开始自己的blog之旅。之前一直纠结在哪个网站（新浪？cococa China？CSDN？）上开始自己的blog。<!-- more -->后来无意间看到唐巧的这篇博文<a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">象写程序一样写博客</a>，觉得之前的想法都弱爆了。</p>
 
 <p>写这个文档之前我还没开始搭建基于Github的Blog。寥以这边文档记录我整个搭建的过程。我的配置环境是 mac os x 10.9.2 。</p>
 
