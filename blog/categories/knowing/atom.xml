@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Amos’s Blog]]></title>
-  <link href="http://AmosBing.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Knowing | Amos’s Blog]]></title>
+  <link href="http://AmosBing.github.io/blog/categories/knowing/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
   <updated>2014-04-18T13:44:02+08:00</updated>
   <id>http://AmosBing.github.io/</id>
@@ -126,51 +126,6 @@ rake preview //启动本地预览
 <p>打开浏览器，输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 就可以看到Blog的界面（使用Ctrl+C停止预览）。</p>
 
 <blockquote><p>如果你不管顺利与不顺利，都做到这一步了。那么恭喜你，blog的基础环境已经搭建完毕。先享受一杯茶吧。</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An Other Test]]></title>
-    <link href="http://AmosBing.github.io/blog/2014/04/10/an-other-test/"/>
-    <updated>2014-04-10T16:12:46+08:00</updated>
-    <id>http://AmosBing.github.io/blog/2014/04/10/an-other-test</id>
-    <content type="html"><![CDATA[<p>This is an other blog.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[还不知道怎么写，试试]]></title>
-    <link href="http://AmosBing.github.io/blog/2014/04/10/huan-bu-zhi-dao-zen-yao-xie-%2Cshi-shi/"/>
-    <updated>2014-04-10T16:00:10+08:00</updated>
-    <id>http://AmosBing.github.io/blog/2014/04/10/huan-bu-zhi-dao-zen-yao-xie-,shi-shi</id>
-    <content type="html"><![CDATA[<p>写在这里就可以了吗？</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[自然，你是怎么启迪生命]]></title>
-    <link href="http://AmosBing.github.io/blog/2014/04/10/frist-blog/"/>
-    <updated>2014-04-10T14:49:35+08:00</updated>
-    <id>http://AmosBing.github.io/blog/2014/04/10/frist-blog</id>
-    <content type="html"><![CDATA[<p>在这个地球的第三极，还是个纯正的自然，被搁在那里的人们，是生命的刚毅，也是那么的纯朴，用一半人生去准备朝圣，然后用另一半人生在朝圣的路上，很多人也许将永远在路上…<!-- more --></p>
-
-<p>而在生活在现代文明的我们不要为朝圣准备，也不要去朝圣，可我们仍然把短暂的一生，消耗在茫然奔波的路上…</p>
-
-<p>西藏是自然还保有的少有的自然，独立荒漠，离开现代文明的依托，蓦然回头，发觉，弱小的自己，除了想如何能让自己活下去，没有种族，没有国家，没有敌我，没有金钱，没有权利，没有烦心，没有了现代文明的种种…完全从个人生活的俗世欲望中脱离出来，那是一种多么神圣的纯净！ 自然总可以给人以洗礼，启迪人性！虽说是老话重谈，但真正领悟并坚持那份纯净谈何容易！</p>
-
-<p>我自允热爱大自然，能透过树叶上的虫洞审视人类。</p>
-
-<p>爱骑单车的我，时常飙弛在郊区乡田曲道，飞过路边的水滩，任其水花横溅，颠簸于凸凹的路面，就是那么发疯的疯狂。沿着陌生的路，看陌生的风景。曾几翻几次和那疯子，在夕阳西下时出发，沿着从没走过的路，黑夜里绕过山野村道，顶着突如其来电闪雷鸣的暴雨，倚着那点方向感与前行的信念，谈笑着划过黑幕，直到回到了城市的光明，定在书桌前的椅子上，盯着一大堆的高考复习资料，回味着…</p>
-
-<p>自然并不与这水泥球分隔。坐在房顶望着天，蓝天，目光久久停在那片云上，思绪可以回到曾经的一个浪漫的想法。那是一个严夏，在农村，闲于午间时间太长，又不想睡着，于是发现了村头一棵茶子树，即凉爽又安静，要是能坐在枝干上，读一本小书，该有多惬意！鉴于这树并不高大，枝干上还脱红色粉末，于是简易用两根麻绳吊着一块木板，制成一简易秋千，总算惬意了一个午后，但我不敢继续第二次的惬意，因为那次后，全身*痒，起红疙瘩，才记起在看书时曾有一只小毛虫掉在我书页上…突然明白这个世界到处都有生命统治着，不容许轻易的冒犯！</p>
-
-<p>不去打扰那棵树里的世界，坐在小河流水中间的石头上，山头空地中，一整天，我想如果能，我会一直坐下去，一动不动，若无所思地若有所思，思的是俗世的烦恼。毕竟离文明社会太近，没有生存的压迫，也就体验一下自然的秀美，而自然平静的表像下，一只蚂蚁在为生存而奔波…我们生活在同一个地球，却不同的世界，但是乎又是为同一个目的。</p>
-
-<p>某某某次看过了秋落，又踏在春落上，会感觉没有绝对的季节，也就没那么多的规则，那么多的对错。 最美的风景是偶然遇见的风景，就在那一刻它容纳了你，但它不会被占有，你也不可能永远停留…</p>
-
-<p>生命只有在人的社会才变得那么复杂，但自然跟本不屑你，因为她容纳你的所有，包括你的思想。我们所能的只是在寻求启迪…</p>
-
-<p>我们只是自然的一个喷嚏，再麻烦也只是一瞬间。</p>
 ]]></content>
   </entry>
   

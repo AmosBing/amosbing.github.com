@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Github使用 | Amos’s Blog]]></title>
-  <link href="http://AmosBing.github.io/blog/categories/githubshi-yong/atom.xml" rel="self"/>
+  <title><![CDATA[Category: GitHub | Amos’s Blog]]></title>
+  <link href="http://AmosBing.github.io/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
-  <updated>2014-04-18T13:37:47+08:00</updated>
+  <updated>2014-04-18T13:44:02+08:00</updated>
   <id>http://AmosBing.github.io/</id>
   <author>
     <name><![CDATA[AmosBing]]></name>
