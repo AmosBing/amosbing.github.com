@@ -4,7 +4,7 @@
   <title><![CDATA[Amos’s Blog]]></title>
   <link href="http://AmosBing.github.io/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
-  <updated>2014-04-18T12:22:54+08:00</updated>
+  <updated>2014-04-18T13:33:55+08:00</updated>
   <id>http://AmosBing.github.io/</id>
   <author>
     <name><![CDATA[AmosBing]]></name>
@@ -31,21 +31,37 @@
 
 <h2>其二：在本机创建一个ssh的钥匙。</h2>
 
-<p>更多教程则可以参考<a href="https://help.github.com/articles/generating-ssh-keys">创建SSH（Github官方）</a>。
-如下是我的步骤，打开mac下的终端，
-输入：
-[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</p>
+<p>更多教程则可以参考<a href="https://help.github.com/articles/generating-ssh-keys">创建SSH（Github官方）</a>。</p>
 
-<p>然后按提示出入密码，得到如下终端输出：
-The key&rsquo;s randomart image is:</p>
+<p>如下是我的步骤，打开mac下的终端，</p>
 
-<p>这样就在本地生成了ssh。成功之后，终端进入”.ssh”目录下，输入：pbcopy &lt; ~/.ssh/id_rsa.pub
-这是把id_rsa.pub文件的能入拷贝到了系统剪切板上了。(所以你也可以直接打开id_rsa.pub文件，拷贝里面的内容。)
-拷贝的内容需要粘贴到Github上的。
-具体操作如下：
-在浏览器中打开页面：<a href="https://github.com/account/ssh">https://github.com/account/ssh</a>
-点击 Add another public key，粘贴前面步骤拷贝的信息。
-请格外注意，不要在Title中填写内容，直接将复制的内容粘贴到Key中，然后点击：Add Key即可。如果需要确认是否设置成功可以参考<a href="https://help.github.com/articles/generating-ssh-keys">创建SSH（Github官方）</a>的第四步。</p>
+<p>输入：</p>
+
+<pre><code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
+</code></pre>
+
+<p>然后按提示出入密码，得到如下终端输出：</p>
+
+<blockquote><p>The key&rsquo;s randomart image is:</p></blockquote>
+
+<p>这样就在本地生成了ssh。
+成功之后，终端进入”.ssh”目录下，
+输入：</p>
+
+<pre><code>pbcopy &lt; ~/.ssh/id_rsa.pub
+</code></pre>
+
+<p>这是把id_rsa.pub文件的能入拷贝到了系统剪切板上了(所以你也可以直接打开id_rsa.pub文件，拷贝里面的内容)。</p>
+
+<p>拷贝的内容需要粘贴到Github上的。<strong>具体操作</strong>如下：</p>
+
+<blockquote><p>在浏览器中打开页面：<a href="https://github.com/account/ssh">https://github.com/account/ssh</a></p>
+
+<p>点击 Add another public key，粘贴前面步骤拷贝的信息。</p>
+
+<p>请格外注意，不要在Title中填写内容，直接将复制的内容粘贴到Key中，然后点击：Add Key即可。</p>
+
+<p>如果需要确认是否设置成功可以参考<a href="https://help.github.com/articles/generating-ssh-keys">创建SSH（Github官方）</a>的第四步。</p></blockquote>
 
 <h2>其三：下载并安装Git。</h2>
 
@@ -53,46 +69,63 @@ The key&rsquo;s randomart image is:</p>
 
 <h2>其四：下载并安装rvm和ruby。</h2>
 
-<p>安装 rvm</p>
+<p><strong>安装 rvm</strong></p>
 
 <p>直接在终端中运行：<a href="http://octopress.org/docs/setup/rvm/">参考官网</a></p>
 
-<p> curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable</p>
+<pre><code>curl -L https://get.rvm.io | bash -s stable 
+</code></pre>
 
 <p>就可以下载和安装rvm，正常的话需要等各几分钟，如果终端会提示安装失败，种种原因，运行上面的命令<strong>重新开始安装</strong>就好。一定要<strong>确保安装成功</strong>，否则无法继续。</p>
 
-<p>安装 ruby</p>
+<p><strong>安装 ruby</strong></p>
 
-<p>rvm安装成功，然后安装ruby（此处安装2.1版本），在终端中运行（三行一起输入）：
- rvm install 2.1   rvm use 2.1
+<p>rvm安装成功，然后安装ruby（此处安装2.1版本），在终端中运行（三行一起输入）：</p>
+
+<pre><code>rvm install 2.1
+rvm use 2.1
 rvm rubygems latest
-注：此处的 ruby版本在不停升级，随着时间推移，你可能需要选择比较大的版本。</p>
+</code></pre>
+
+<blockquote><p>注：此处的 ruby版本在不停升级，随着时间推移，你可能需要选择比较高的版本。</p></blockquote>
 
 <h2>其五：安装Octopress。这是我们创建blog的主角了。</h2>
 
 <p>以下命令都在终端里输入
 先从Github上把其复制一份到本地：</p>
 
-<p>git clone git://github.comi/imathis/octopress.git octopress
-进入octopress目录：</p>
+<pre><code>git clone git://github.comi/imathis/octopress.git octopress
+</code></pre>
 
-<p>cd octopress<br/>
-查看ruby版本信息，需要1.9.3及以上：</p>
+<p>进入octopress目录：</p>
 
-<p>ruby &mdash;version</p>
+<pre><code>cd octopress  
+</code></pre>
+
+<p>查看ruby版本信息，需要1.9.3及以上：</p>
+
+<pre><code>ruby --version
+</code></pre>
 
 <p>安装cotopress的依赖环境：</p>
 
-<p>gem install bundlerbundle install</p>
+<pre><code>gem install bundler bundle install
+</code></pre>
 
 <p>以默认设置安装octopress：</p>
 
-<p>rake install
-到现在为止，Octopress 已经可以使用了，可以运行以下两个指令来检验</p>
+<pre><code>rake install
+</code></pre>
 
-<p>rake generate //生成静态页面rake preview //启动本地预览</p>
+<p>到现在为止，Octopress 已经可以使用了，可以运行以下两个指令来检验</p>
 
-<p>打开浏览器，输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 就可以看到Blog的界面（使用Ctrl+C停止预览）如果你不管顺利与不顺利，都做到这一步了。那么恭喜你，blog的基础环境已经搭建完毕。先享受一杯茶吧。</p>
+<pre><code>rake generate //生成静态页面
+rake preview //启动本地预览
+</code></pre>
+
+<p>打开浏览器，输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 就可以看到Blog的界面（使用Ctrl+C停止预览）。</p>
+
+<blockquote><p>如果你不管顺利与不顺利，都做到这一步了。那么恭喜你，blog的基础环境已经搭建完毕。先享受一杯茶吧。</p></blockquote>
 ]]></content>
   </entry>
   
