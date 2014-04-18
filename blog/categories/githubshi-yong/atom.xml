@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Github使用 | Amos’s Blog]]></title>
   <link href="http://AmosBing.github.io/blog/categories/githubshi-yong/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
-  <updated>2014-04-18T11:09:47+08:00</updated>
+  <updated>2014-04-18T12:22:54+08:00</updated>
   <id>http://AmosBing.github.io/</id>
   <author>
     <name><![CDATA[AmosBing]]></name>
@@ -18,36 +18,81 @@
     <link href="http://AmosBing.github.io/blog/2014/04/18/begin-blog-on-github-with-octopress/"/>
     <updated>2014-04-18T09:12:28+08:00</updated>
     <id>http://AmosBing.github.io/blog/2014/04/18/begin-blog-on-github-with-octopress</id>
-    <content type="html"><![CDATA[<ol>
-<li><p>安装 rvm</p>
+    <content type="html"><![CDATA[<p>想了很久很久，终于决定开始自己的blog之旅。之前一直纠结在哪个网站（新浪？cococa China？CSND？）上开始自己的blog。<!-- more -->后来无意间看到唐巧的这篇博文<a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">象写程序一样写博客</a>，觉得之前的想法都弱爆了。</p>
+
+<p>写这个文档之前我还没开始搭建基于Github的Blog。寥以这边文档记录我整个搭建的过程。我的配置环境是 mac os x 10.9.2 。</p>
+
+<p>开始做之前，先了解下这样技术背景。关于Github可以另行了解，在此不做深入。能在Github上写blog关键之基础是其<strong>Pages</strong>功能，该功能支持上传html，于是就催生了一个叫<strong>Octopress</strong>（A blogging framework for hackers）的blog管理工具，基本原理是用git来管理你的文章，最终发布到github上成为一个独立博客站点。</p>
+
+<p>OK！要开始我的艰辛探索之旅了。主要参照：<a href="http://octopress.org/docs/setup/">Octopress Setup</a>。
+工欲善其事，必先利其器。先安装必要的工具和环境吧！</p>
+
+<h2>其一：注册一个<a href="https://github.com/signup/free">GitHub免费帐号</a>。</h2>
+
+<h2>其二：在本机创建一个ssh的钥匙。</h2>
+
+<p>更多教程则可以参考<a href="https://help.github.com/articles/generating-ssh-keys">创建SSH（Github官方）</a>。
+如下是我的步骤，打开mac下的终端，
+输入：
+[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</p>
+
+<p>然后按提示出入密码，得到如下终端输出：
+The key&rsquo;s randomart image is:</p>
+
+<p>这样就在本地生成了ssh。成功之后，终端进入”.ssh”目录下，输入：pbcopy &lt; ~/.ssh/id_rsa.pub
+这是把id_rsa.pub文件的能入拷贝到了系统剪切板上了。(所以你也可以直接打开id_rsa.pub文件，拷贝里面的内容。)
+拷贝的内容需要粘贴到Github上的。
+具体操作如下：
+在浏览器中打开页面：<a href="https://github.com/account/ssh">https://github.com/account/ssh</a>
+点击 Add another public key，粘贴前面步骤拷贝的信息。
+请格外注意，不要在Title中填写内容，直接将复制的内容粘贴到Key中，然后点击：Add Key即可。如果需要确认是否设置成功可以参考<a href="https://help.github.com/articles/generating-ssh-keys">创建SSH（Github官方）</a>的第四步。</p>
+
+<h2>其三：下载并安装Git。</h2>
+
+<p>无论是直接下载Git源码还是，Git安装包，只要安装了就行。头疼的是Git官网经常是被GFW了，需要翻墙，各显神通了。我偷懒直接到google下载一个安装包。</p>
+
+<h2>其四：下载并安装rvm和ruby。</h2>
+
+<p>安装 rvm</p>
 
 <p>直接在终端中运行：<a href="http://octopress.org/docs/setup/rvm/">参考官网</a></p>
 
-<p><code>  curl -L https://get.rvm.io | bash -s stable
-</code>   就可以下载和安装rvm，正常的话需要等各几分钟，如果终端会提示安装失败，种种原因，运行上面的命令<strong>重新开始安装</strong>就好。一定要<strong>确保安装成功</strong>，否则无法继续。</p></li>
-<li><p>安装 ruby</p>
+<p> curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable</p>
 
-<p>rvm安装成功，然后安装ruby（此处安装2.1版本），在终端中运行（三行一起输入）：</p>
+<p>就可以下载和安装rvm，正常的话需要等各几分钟，如果终端会提示安装失败，种种原因，运行上面的命令<strong>重新开始安装</strong>就好。一定要<strong>确保安装成功</strong>，否则无法继续。</p>
 
-<p><code>  rvm install 2.1      rvm use 2.1   rvm rubygems latest  </code>>注：此处的 ruby版本在不停升级，随着时间推移，你可能需要选择比较大的版本。其五：安装Octopress。这是我们创建blog的主角了。</p></li>
-</ol>
+<p>安装 ruby</p>
 
+<p>rvm安装成功，然后安装ruby（此处安装2.1版本），在终端中运行（三行一起输入）：
+ rvm install 2.1   rvm use 2.1
+rvm rubygems latest
+注：此处的 ruby版本在不停升级，随着时间推移，你可能需要选择比较大的版本。</p>
 
-<hr />
+<h2>其五：安装Octopress。这是我们创建blog的主角了。</h2>
 
-<blockquote><p>以下命令都在终端里输入
-先从Github上把其复制一份到本地：
-<code>git clone git://github.comi/imathis/octopress.git octopress
-</code>进入octopress目录：
-<code>cd octopress  
-</code>查看ruby版本信息，需要1.9.3及以上：
-<code>ruby --version
-</code>安装cotopress的依赖环境：
-<code>gem install bundlerbundle install
-</code>以默认设置安装octopress：
-<code>rake install</code>到现在为止，Octopress 已经可以使用了，可以运行以下两个指令来检验
-<code>rake generate //生成静态页面rake preview //启动本地预览
-</code>打开浏览器，输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 就可以看到Blog的界面（使用Ctrl+C停止预览）>如果你不管顺利与不顺利，都做到这一步了。那么恭喜你，blog的基础环境已经搭建完毕。先享受一杯茶吧&hellip;&hellip;[id_to_blog_like_program]: <a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/</a></p></blockquote>
+<p>以下命令都在终端里输入
+先从Github上把其复制一份到本地：</p>
+
+<p>git clone git://github.comi/imathis/octopress.git octopress
+进入octopress目录：</p>
+
+<p>cd octopress<br/>
+查看ruby版本信息，需要1.9.3及以上：</p>
+
+<p>ruby &mdash;version</p>
+
+<p>安装cotopress的依赖环境：</p>
+
+<p>gem install bundlerbundle install</p>
+
+<p>以默认设置安装octopress：</p>
+
+<p>rake install
+到现在为止，Octopress 已经可以使用了，可以运行以下两个指令来检验</p>
+
+<p>rake generate //生成静态页面rake preview //启动本地预览</p>
+
+<p>打开浏览器，输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 就可以看到Blog的界面（使用Ctrl+C停止预览）如果你不管顺利与不顺利，都做到这一步了。那么恭喜你，blog的基础环境已经搭建完毕。先享受一杯茶吧。</p>
 ]]></content>
   </entry>
   
