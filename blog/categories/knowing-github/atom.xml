@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Knowing_GitHub | Amos’s Blog]]></title>
   <link href="http://AmosBing.github.io/blog/categories/knowing-github/atom.xml" rel="self"/>
   <link href="http://AmosBing.github.io/"/>
-  <updated>2014-04-18T17:51:46+08:00</updated>
+  <updated>2014-04-23T10:56:08+08:00</updated>
   <id>http://AmosBing.github.io/</id>
   <author>
     <name><![CDATA[AmosBing]]></name>
@@ -12,6 +12,170 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Blog 环境的基本配置]]></title>
+    <link href="http://AmosBing.github.io/blog/2014/04/22/configure-the-blog-evironment/"/>
+    <updated>2014-04-22T09:31:16+08:00</updated>
+    <id>http://AmosBing.github.io/blog/2014/04/22/configure-the-blog-evironment</id>
+    <content type="html"><![CDATA[<p>该系列的<a href="http://amosbing.github.io/blog/2014/04/18/begin-blog-on-github-with-octopress/">另一篇文字</a>已经详细描述如何使用Octopress在GitHub上搭建blog环境，这里需要描述一些blog相关的细节。<!-- more --></p>
+
+<h1>第一项：基本配置</h1>
+
+<p>主要是由于GFW的原因，将会造成页面load很慢。所以要做好配置。</p>
+
+<ul>
+<li>修改文件：_config.yml ，这个配置文件都有相应的注释。主要就是改一些博客头，作者名之类的东西。 注意最好把里面的twitter相关的信息全部删掉。</li>
+<li>修改定制文件/source/_includes/custom/head.html 把google的自定义字体去掉。</li>
+</ul>
+
+
+<h1>添加新的page</h1>
+
+<p>（如图红色区域的内容）</p>
+
+<p><img src="https://github.com/AmosBing/blogImages/blob/master/Image%20of%20blog/Blog%20%E7%8E%AF%E5%A2%83%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/whereIsPages.png?raw=true" alt="icon" /></p>
+
+<blockquote><p>参考：</p>
+
+<ol>
+<li><a href="http://www.tuicool.com/articles/VZB3um">http://www.tuicool.com/articles/VZB3um</a></li>
+<li><a href="http://www.cnblogs.com/oec2003/archive/2013/05/31/3109577.html">http://www.cnblogs.com/oec2003/archive/2013/05/31/3109577.html</a></li>
+</ol>
+</blockquote>
+
+<h5>使用rake new_page[页面名称或目录] 命令</h5>
+
+<p>如（在终端中，现进入Octopress根目录）</p>
+
+<pre><code>如果运行：
+
+rake new_page[super-awesome]
+会创建文件如下目录 /source/super-awesome/index.markdown
+如果运行：
+rake new_page[super-awesome/page.html]
+会创建文件如下目录 /source/super-awesome/page.html
+</code></pre>
+
+<p>打开生成的文件，里面默认有如下信息：</p>
+
+<pre><code>layout: page
+title: "Super Awesome" //更在这里为你想要的名字
+date: 2011-07-03 5:59
+comments: true
+sharing: true
+footer: true
+</code></pre>
+
+<p>然后你能在octopress的source文件目录下看到名为super-awesome的文件夹(<strong>该文件夹是你设定的页面名称</strong>)，但是如果现在生成网站，并不能自动把新的页面显示在导航区。</p>
+
+<p>为了显示出来，得继续往下做几步。</p>
+
+<p>打开文件source/_includes/custom/navigation.html，默认情况下如下所示：</p>
+
+<pre><code>&lt;ul class="main-navigation"&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>可以将Blog和Archives修改为“主页”和“时间轴”（任何你想表示的文字）。</p>
+
+<p>然后我们在此添加一个新页面，比如关于页面，我们可以按下面步骤实现：</p>
+
+<p>修改上面的navigation.html为：</p>
+
+<pre><code>&lt;ul class="main-navigation"&gt;
+    &lt;li&gt;&lt;a href="/"&gt;主页&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/blog/archives"&gt;时间轴&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/super-awesome"&gt;关于&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h1>添加侧边栏文章分类</h1>
+
+<ul>
+<li>在<strong>plugins</strong>目录中创建<strong>category_list_tag.rb</strong>文件，</li>
+</ul>
+
+
+<p>文件内容如下：</p>
+
+<pre><code>moduleJekyll
+    class CategoryListTag &lt; Liquid::Tag 
+    def render(context)
+        html = ""
+        categories = context.registers[:site].categories.keys
+        categories.sort.each do |category| 
+            posts_in_category = context.registers[:site].categories[category].size 
+            category_dir = context.registers[:site].config['category_dir']
+            category_url = File.join(category_dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase) 
+            html &lt;&lt; "&lt;li class='category'&gt;&lt;a href='http://AmosBing.github.io/#{category_url}/'&gt;#{category} (#{posts_in_category})&lt;/a&gt;&lt;/li&gt;\n" 
+            end 
+            html
+        end 
+    end
+end
+Liquid::Template.register_tag('category_list', Jekyll::CategoryListTag)
+
+* 添加__source/_includes/asides/category_list.html__文件
+</code></pre>
+
+<p>内容如下：</p>
+
+<pre><code>&lt;section&gt;
+    &lt;h1&gt;文章分类&lt;/h1&gt; 
+    &lt;ul id="categories"&gt; 
+    {&gt;% category_list &gt;%} //使用时此处的两个“&gt;”号要删除。
+    &lt;/ul&gt; 
+&lt;/section&gt;
+</code></pre>
+
+<ul>
+<li>修改<strong> _config.yml </strong>文件</li>
+</ul>
+
+
+<p>在default_asides项中添加asides/category_list.html，值之间以逗号隔开。</p>
+
+<pre><code>如：
+default_asides: [asides/category_list.html, asides/recent_posts.html]
+（中括号的排列顺序，对应的就是页面中从上倒下的排列顺序）
+</code></pre>
+
+<ul>
+<li>做完上面三步，生成网站后，就能看到右侧边栏出现了“文章分类”四个大字</li>
+</ul>
+
+
+<p>但是很有可能这时候你并看不到具体的分类。</p>
+
+<p>让具体分类出现，你只需要在你的每一片blog原文件的头部添加“categories:”属性，然后octopress就会为你自动整理好正确的分类即分类下的文章数量。</p>
+
+<blockquote><p>在侧边栏中还可以添加其他的一些组件，如新浪微博、我的豆瓣、最新评论、标签云等，添加页面以及让其显示的方法和上面类似。</p></blockquote>
+
+<h1>添加微博分享和用户评论</h1>
+
+<p>我主要介绍一下如何配置评论和分享到微博功能。步骤如下：
+* 在<em>config.yml中增加一项： weibo_share: true
+* 修改 source/</em>includes/post/sharing.html
+增加</p>
+
+<pre><code>// 下面的大括号是全角的，如果复制，请自行改成半角
+｛% if site.weibo_share %｝
+｛% include post/weibo.html %｝
+｛% endif %｝
+</code></pre>
+
+<ul>
+<li>增加文件：source/_includes/post/weibo.html</li>
+<li>访问 <a href="http://www.jiathis.com/">http://www.jiathis.com/</a> ，获取分享的代码</li>
+<li>访问 <a href="http://uyan.cc/">http://uyan.cc/</a> ，获得评论的代码</li>
+<li>将上面2步的代码都加入到weibo.html中即可</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[High 起来！开始自己的技术blog]]></title>
